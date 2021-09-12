@@ -1,38 +1,424 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Valorant;
+  src: url(./media/font/Valorant\ Font.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
-.App-header {
-  background-color: #282c34;
+:root {
+  --transparent-black: rgba(0, 0, 0, 0.4);
+  --valorant-red: #ff4654;
+  --valorant-dark: #101823;
+  --valorant-green: #59d0a9;
+}
+
+body {
+  position: relative;
+  right: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 7vw;
+  font-family: "Valorant", Courier, monospace;
+}
+
+body::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--valorant-dark); /* color of the tracking area */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--valorant-red); /* color of the scroll thumb */
+  border-radius: 2rem; /* roundness of the scroll thumb */
+  border: none; /* creates padding around scroll thumb */
+}
+
+/*********** HEADER ***********/
+.header-container {
+  position: relative;
+  right: 0;
+  height: fit-content;
+  color: #222;
+  background-color: var(--valorant-dark);
+  overflow: hidden;
+}
+
+#my-video {
   min-height: 100vh;
+  z-index: -2;
+}
+
+.content-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  top: 50vh;
+  height: 100%;
+  width: 100%;
+}
+
+.header-container .content-container .header-title {
+  width: 50%;
+  color: #fff;
+}
+
+.content-container .agent-img img {
+  transform: scale(1.8);
+}
+
+/*********** MAP MENU ***********/
+.carousel-root {
+  position: relative;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.map-container {
+  height: 100vh;
+  overflow-x: hidden !important;
+  background-size: cover;
+  background-position: center;
+}
+
+.desc-container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  padding: 5rem;
+  background-color: var(--transparent-black);
+}
+
+.text-container {
+  width: 70%;
+}
+
+.text-container p {
+  text-align: justify;
+}
+
+.text-container h1 {
+  text-align: start;
+  font-size: 5vw;
+}
+
+.desc-container .map-btn {
+  background-color: #101823;
+  color: white;
+  height: 15rem;
+  width: 15rem;
+  letter-spacing: -2px;
+  font-size: 3vw;
+  border: none;
+  border-radius: 50%;
+  transition: all ease 0.15s;
+  font-family: Valorant, Helvetica, sans-serif;
+}
+.desc-container button .play-icon {
+  transform: scale(5);
+  transition: all ease 0.2s;
+}
+
+.desc-container button:hover {
+  cursor: pointer;
+  overflow: hidden;
+  background-color: var(--valorant-red);
+  text-shadow: 0.3rem 0.6rem 0 var(--transparent-black);
+}
+.desc-container button:hover .play-icon {
+  transform: scale(8);
+}
+
+/*********** FOOTER ***********/
+.footer-container {
+  position: relative;
+  background-image: linear-gradient(#0000002d 90%, #ff283a48), url("https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltbded518020183769/5eb26f5389bac8148a8006cc/agent-background-generic.JPG");
+  min-height: 30vh;
+  right: 0;
+  color: #666;
+}
+
+.footer-container .footer-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.footer-text img {
+  height: 5vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.footer-text .icon-container {
+  width: 30%;
+}
+
+.footer-text .icon-container ul {
+  display: flex;
+  padding: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.footer-text .icon-container ul li a {
+  color: #fff;
+}
+
+.footer-text .icon-container ul li a:hover {
+  color: var(--valorant-red);
+}
+
+.footer-text .icon-container ul li .icon {
+  font-size: 3vw;
+}
+
+/*********** VIDEO CONTAINER ***********/
+.video-container {
+  color: #fff;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.video-container .home-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--valorant-dark);
+  border: none;
+  transition: all ease 0.1s;
+  text-align: center;
+}
+
+.video-container .home-btn .home-icon {
+  font-size: 6vh;
+  color: var(--valorant-red);
+  padding: 0.5rem;
+}
+
+.video-container .home-btn:hover {
+  cursor: pointer;
+  background-color: var(--valorant-red);
+}
+
+.video-container .home-btn:hover .home-icon {
+  color: var(--valorant-dark);
+}
+
+.side-container {
+  padding: 5rem 0;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.side-container .attacker,
+.side-container .defender {
+  max-height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.side-container .dart-btn {
+  border: none;
+  width: 100%;
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.side-container a {
+  text-decoration: none;
+}
+
+.side-container .dart-btn:hover {
+  filter: brightness(125%);
+  cursor: pointer;
+}
+
+.side-container .dart-btn h1 {
+  padding-left: 1rem;
+  color: #fff;
+  font-size: 2.5vw;
+}
+
+.side-container .dart-btn img {
+  padding: 0.5rem;
+  height: 4vw;
+}
+
+.side-container .attacker .dart-btn {
+  background-color: var(--valorant-red);
+}
+
+.side-container .defender .dart-btn {
+  background-color: var(--valorant-green);
+}
+
+.side-container .attacker::-webkit-scrollbar {
+  display: none; /* width of the entire scrollbar */
+}
+
+.side-container .defender::-webkit-scrollbar {
+  display: none; /* width of the entire scrollbar */
+}
+
+@media screen and (max-width: 900px) {
+  h1 {
+    font-size: 20vw;
   }
-  to {
-    transform: rotate(360deg);
+  /*********** HEADER ***********/
+  .content-container {
+    display: block;
+    top: 25vh;
+    padding: 1rem;
+  }
+  .header-container .content-container .header-title {
+    width: 100%;
+    padding: 3rem;
+    color: #fff;
+  }
+  .content-container .agent-img img {
+    display: none;
+  }
+  /*********** MAP MENU ***********/
+  .desc-container {
+    bottom: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    color: #fff;
+    padding: 2.5rem;
+  }
+  .text-container {
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+  .text-container h1 {
+    font-size: 10vw;
+  }
+  .text-container p {
+    font-size: 2vw;
+  }
+  .desc-container .map-btn {
+    height: fit-content;
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 1rem 0;
+  }
+
+  .desc-container button .play-icon {
+    transform: scale(2);
+    transition: all ease 0.15s;
+  }
+
+  .desc-container button:hover .play-icon {
+    transform: scale(2) translateX(20vw);
+  }
+
+  /*********** FOOTER ***********/
+  .footer-text img {
+    height: 9vw;
+  }
+  .footer-text .icon-container {
+    width: 60%;
+  }
+  .footer-text .icon-container ul li .icon {
+    font-size: 5vw;
+  }
+
+  .video-container {
+    background-position: center;
+  }
+
+  .side-container {
+    align-items: baseline;
+    justify-content: space-around;
+  }
+
+  .side-container .dart-btn img {
+    padding: 0.2rem;
+    height: 6vw;
+  }
+
+  .video-container .home-btn {
+    height: fit-content;
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /*********** HEADER ***********/
+  #my-video {
+    object-fit: fill;
+  }
+  .header-container .content-container .header-title {
+    padding: 0.5rem;
+  }
+  .text-container p {
+    font-size: 3.5vw;
+  }
+
+  /*********** MAP MENU ***********/
+  .desc-container button:hover .play-icon {
+    transform: scale(2) translateX(16vw);
+  }
+
+  /*********** FOOTER ***********/
+  .footer-text {
+    text-align: center;
+  }
+  .footer-text .icon-container {
+    width: 150%;
+  }
+  .footer-text .icon-container ul li .icon {
+    font-size: 8vw;
+  }
+
+  /*********** VIDEO CONTAINER ***********/
+  .video-container {
+    min-height: fit-content;
+    overflow: scroll;
+  }
+
+  .side-container {
+    display: block;
+  }
+
+  .side-container .attacker,
+  .side-container .defender {
+    margin: 0 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .side-container .dart-btn h1 {
+    font-size: 4vw;
+  }
+
+  .side-container .dart-btn img {
+    padding: 0.2rem;
+    height: 5vh;
   }
 }
