@@ -2,7 +2,6 @@ import "./App.css";
 import LandingPage from "./components/Landing-Page/LandingPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import VidList from "./components/Lineup-Page/VidList";
-import { SmoothProvider } from "react-smooth-scrolling";
 
 function App() {
   return (

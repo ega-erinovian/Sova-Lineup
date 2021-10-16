@@ -15,22 +15,22 @@ const Footer = () => {
           <div className="icon-container">
             <ul>
               <li>
-                <a href="https://github.com/ega-erinovian?tab=repositories" target="_blank">
+                <a href="https://github.com/ega-erinovian?tab=repositories" target="_blank" rel="noreferrer">
                   <GitHubIcon className="icon" />
                 </a>
               </li>
               <li>
-                <a href="https://app.netlify.com/teams/egaputra69/overview" target="_blank">
+                <a href="https://app.netlify.com/teams/egaputra69/overview" target="_blank" rel="noreferrer">
                   <LanguageIcon className="icon" />
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/in/ega-erinovian-megananda-putra-562387176/" target="_blank">
+                <a href="https://www.linkedin.com/in/ega-erinovian-megananda-putra-562387176/" target="_blank" rel="noreferrer">
                   <LinkedInIcon className="icon" />
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/egaerinovian/" target="_blank">
+                <a href="https://www.instagram.com/egaerinovian/" target="_blank" rel="noreferrer">
                   <InstagramIcon className="icon" />
                 </a>
               </li>

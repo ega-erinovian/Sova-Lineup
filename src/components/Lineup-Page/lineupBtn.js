@@ -7,9 +7,9 @@ const lineupBtn = (props) => {
   ];
   return (
     <>
-      <a href={props.link} target="_blank">
+      <a href={props.link} target="_blank" rel="noreferrer">
         <button className="dart-btn">
-          <img src={dartType[props.dart]} />
+          <img src={dartType[props.dart]} alt="dart-icon" />
           <h1>{props.name}</h1>
         </button>
       </a>
